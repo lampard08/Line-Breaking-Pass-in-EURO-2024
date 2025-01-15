@@ -44,9 +44,7 @@ Once the defensive lines are formed, we can utilize Python’s geometry librarie
 
 Here is one sample visualization of a line-breaking pass frame —— Fabian Ruiz’s assist to Alvaro Morata in Spain’s first match versus Croatia.
 
-![Example LBP Frame](Example-LBP-Frame.png)
-
-![Frame_Fabian_Assist](Frame-Fabian-Assist-Annotated.png)
+![Frame_Fabian_Assist](Frame-Fabian-Assist-Annotated.png)|![Example LBP Frame](Example-LBP-Frame.png)
 
 ## Analysis
 
