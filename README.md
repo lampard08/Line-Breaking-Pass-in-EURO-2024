@@ -12,21 +12,21 @@ An easy way to access StatsBomb's data is through a Python package called `mplso
 
 ## Project Workflow
 
-![workflow](C:\Users\Lin Weiran\Desktop\Blog\08 Line-Breaking Pass\workflow.png)
+![workflow](workflow.png)
 
 ## Handling Intercepted Passes
 
 One major challenge here is dealing with those incomplete passes. Since they were intercepted, we can’t tell whether they were intended to be line-breaking or not simply from the event data. To tackle this, we can transfer the idea of one classic case in probability theory —— survival analysis. In this scenario, we see passing length as the random variable —— the lifetime of a pass, and a ball intercepted as death or failure. Then we can use the observed pass lengths to fit the Weibull Survival Model and calculate the expected lifetime (intended length) for each intercepted pass.
 
 The expected lifetime is calculated by **conditional expectation**, given that a pass has already survived a certain distance.
-$$
-\begin{align*}\mathbb{E}[T \mid T > s]&=\int_{\left( \frac{s}{\lambda} \right)^k}^\infty \lambda z^{\frac{1}{k}} e^{\left( \frac{s}{\lambda} \right)^k} e^{-z} \, dz =\lambda e^{\left( \frac{s}{\lambda} \right)^k} \Gamma\left(1 + \frac{1}{k}, \left( \frac{s}{\lambda} \right)^k \right)\end{align*}
-$$
+```math
+\begin{aligned}\mathbb{E}[T \mid T > s]&=\int_{\left( \frac{s}{\lambda} \right)^k}^\infty \lambda z^{\frac{1}{k}} e^{\left( \frac{s}{\lambda} \right)^k} e^{-z} \, dz =\lambda e^{\left( \frac{s}{\lambda} \right)^k} \Gamma\left(1 + \frac{1}{k}, \left( \frac{s}{\lambda} \right)^k \right)\end{aligned}
+```
 For detailed derivation and interpretation, please refer to my article [A Pass’s Expected Lifetime — An Application of Survival Analysis in Football](https://medium.com/@WeiranLin/a-passs-expected-lifetime-an-application-of-survival-analysis-in-football-1d4af36edca9).
 
 By doing this, intercepted passes can now be treated the same as completed passes. For example, this pass won’t be identified as a line-breaking pass before since its actual ending point is not at least 2 meters beyond the line (criteria of line-breaking passes). However, after applying the method to get the predicted destination, we can state that this pass was intended to break the last defensive line. Therefore, this pass will be identified as an incomplete line-breaking pass instead of a non-line-breaking one.
 
-![Intercepted LBP Example Cut](C:\Users\Lin Weiran\Desktop\Blog\08 Line-Breaking Pass\Intercepted LBP Example Cut.png)
+![Intercepted LBP Example Cut](Intercepted-LBP-Example-Cut.png)
 
 ## Forming the Defensive Lines
 
@@ -34,7 +34,7 @@ To determine if a pass broke or was intended to break a defensive line geometric
 
 Here's an example of a defensive setup:
 
-![](C:\Users\Lin Weiran\Desktop\Blog\08 Line-Breaking Pass\kickoff def-line.png)
+![defensive setup](kickoff-def-line.png)
 
 > Note that not all players were in the frame because the frames are captured from broadcast. Generally, let Jenks Break Clustering to form three lines functions well.
 
@@ -44,9 +44,9 @@ Once the defensive lines are formed, we can utilize Python’s geometry librarie
 
 Here is one sample visualization of a line-breaking pass frame —— Fabian Ruiz’s assist to Alvaro Morata in Spain’s first match versus Croatia.
 
-![Example LBP Frame](C:\Users\Lin Weiran\Desktop\Blog\08 Line-Breaking Pass\Example LBP Frame.png)
+![Example LBP Frame](Example-LBP-Frame.png)
 
-![Frame_Fabian_Assist](C:\Users\Lin Weiran\Desktop\Blog\08 Line-Breaking Pass\Frame_Fabian_Assist.png)
+![Frame_Fabian_Assist](Frame-Fabian-Assist-Annotated.png)
 
 ## Analysis
 
@@ -56,6 +56,9 @@ Here are two examples of my analytical works. The first graph (created in Tablea
 
 Detailed analysis can be found in [my article](https://medium.com/@WeiranLin/decoding-line-breaking-passes-in-euro-2024-806d8ac26882).
 
-![](C:\Users\Lin Weiran\Desktop\Blog\08 Line-Breaking Pass\Mid LBP Annotated.png)
+![Mid LBP](Mid-LBP-Annotated.png)
 
-![TK LBP](C:\Users\Lin Weiran\Desktop\Blog\08 Line-Breaking Pass\TK LBP.png)
+![TK LBP](TK-LBP.png)
+
+# Reference
+[how-impactful-are-line-breaking-passes](https://www.statsperform.com/resource/how-impactful-are-line-breaking-passes/)
