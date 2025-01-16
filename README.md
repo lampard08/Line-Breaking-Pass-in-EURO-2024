@@ -12,7 +12,7 @@ An easy way to access StatsBomb's data is through a Python package called `mplso
 
 ## Project Workflow
 
-![workflow](workflow.png)
+![workflow](./Images/workflow.png)
 
 ## Handling Intercepted Passes
 
@@ -26,7 +26,7 @@ For detailed derivation and interpretation, please refer to my article [A Pass�
 
 By doing this, intercepted passes can now be treated the same as completed passes. For example, this pass won’t be identified as a line-breaking pass before since its actual ending point is not at least 2 meters beyond the line (criteria of line-breaking passes). However, after applying the method to get the predicted destination, we can state that this pass was intended to break the last defensive line. Therefore, this pass will be identified as an incomplete line-breaking pass instead of a non-line-breaking one.
 
-![Intercepted LBP Example Cut](Intercepted-LBP-Example-Cut.png)
+![Intercepted LBP Example Cut](./Images/Intercepted-LBP-Example.png)
 
 ## Forming the Defensive Lines
 
@@ -34,7 +34,7 @@ To determine if a pass broke or was intended to break a defensive line geometric
 
 Here's an example of a defensive setup:
 
-![defensive setup](kickoff-def-line.png)
+![defensive setup](./Images/kickoff-def-line.png)
 
 > Note that not all players were in the frame because the frames are captured from broadcast. Generally, let Jenks Break Clustering to form three lines functions well.
 
@@ -44,19 +44,20 @@ Once the defensive lines are formed, we can utilize Python’s geometry librarie
 
 Here is one sample visualization of a line-breaking pass frame —— Fabian Ruiz’s assist to Alvaro Morata in Spain’s first match versus Croatia.
 
-![Frame_Fabian_Assist](Frame-Fabian-Assist-Annotated.png)|![Example LBP Frame](Example-LBP-Frame.png)
+![Frame_Fabian_Assist](./Images/Frame-Fabian-Assist.png)![Example LBP Frame](./Images/Example-LBP-Frame.png)
 
 ## Analysis
 
 Having all passes labeled with line-breaking or not, we can do data analysis and visualization to evaluate teams' and players' line-breaking pass performance.
 
-Here are two examples of my analytical works. The first graph (created in Tableau, the workbook file can be found in this repository) shows the midfielders' line-breaking pass performance with annotations. The second graph shows Toni Kroos's line-breaking passes delivered to German attacking midfielders.
+Here are two examples of my analytical works. The first graph (created in Tableau, the workbook file can be found in this repository, and team icons can be found in the folder) shows the midfielders' line-breaking pass performance with annotations. The second graph shows Toni Kroos's line-breaking passes delivered to German attacking midfielders.
 
 Detailed analysis can be found in [my article](https://medium.com/@WeiranLin/decoding-line-breaking-passes-in-euro-2024-806d8ac26882).
 
-![Mid LBP](Mid-LBP-Annotated.png)
+![Mid LBP](./Images/Mid-LBP-Annotated.png)
 
-![TK LBP](TK-LBP.png)
+![TK LBP](./Images/TK-LBP.png)
 
+-----------------------------------------------------------------------------
 # Reference
 [how-impactful-are-line-breaking-passes](https://www.statsperform.com/resource/how-impactful-are-line-breaking-passes/)
