@@ -46,6 +46,8 @@ Here is one sample visualization of a line-breaking pass frame —— Fabian Rui
 
 ![Frame_Fabian_Assist](./Images/Frame-Fabian-Assist.png)![Example LBP Frame](./Images/Example-LBP-Frame.png)
 
+**Total Running time for 37K rows of data: 3 min **
+
 ## Analysis
 
 Having all passes labeled with line-breaking or not, we can do data analysis and visualization to evaluate teams' and players' line-breaking pass performance.
