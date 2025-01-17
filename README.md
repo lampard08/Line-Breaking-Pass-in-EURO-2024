@@ -26,7 +26,7 @@ For detailed derivation and interpretation, please refer to my article [A Pass�
 
 By doing this, intercepted passes can now be treated the same as completed passes. For example, this pass won’t be identified as a line-breaking pass before since its actual ending point is not at least 2 meters beyond the line (criteria of line-breaking passes). However, after applying the method to get the predicted destination, we can state that this pass was intended to break the last defensive line. Therefore, this pass will be identified as an incomplete line-breaking pass instead of a non-line-breaking one.
 
-![Intercepted LBP Example Cut](./Images/Intercepted-LBP-Example.png)
+![Intercepted LBP Example Cut](./Images/Intercepted-LBP-Example-Logo.png)
 
 ## Forming the Defensive Lines
 
@@ -34,7 +34,7 @@ To determine if a pass broke or was intended to break a defensive line geometric
 
 Here's an example of a defensive setup:
 
-![defensive setup](./Images/kickoff-def-line.png)
+![defensive setup](./Images/Kickoff-DefLine-Logo.png)
 
 > Note that not all players were in the frame because the frames are captured from broadcast. Generally, let Jenks Break Clustering to form three lines functions well.
 
@@ -44,7 +44,7 @@ Once the defensive lines are formed, we can utilize Python’s geometry librarie
 
 Here is one sample visualization of a line-breaking pass frame —— Fabian Ruiz’s assist to Alvaro Morata in Spain’s first match versus Croatia.
 
-![Frame_Fabian_Assist](./Images/Frame-Fabian-Assist.png)![Example LBP Frame](./Images/Example-LBP-Frame.png)
+![Frame_Fabian_Assist](./Images/Frame-Fabian-Assist.png)![Example LBP Frame](./Images/Example-LBP-Frame-Logo.png)
 
 **Total Running time for 37K rows of data: 3 min**
 
@@ -56,9 +56,9 @@ Here are two examples of my analytical works. The first graph (created in Tablea
 
 Detailed analysis can be found in [my article](https://medium.com/@WeiranLin/decoding-line-breaking-passes-in-euro-2024-806d8ac26882).
 
-![Mid LBP](./Images/Mid-LBP-Annotated.png)
+![Mid LBP](./Images/Mid-LBP-Annotated-Logo.png)
 
-![TK LBP](./Images/TK-LBP.png)
+![TK LBP](./Images/TK-LBP-Logo.png)
 
 -----------------------------------------------------------------------------
 # Reference
