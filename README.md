@@ -19,6 +19,23 @@ An easy way to access StatsBomb's data is through a Python package called `mplso
 One major challenge here is dealing with those incomplete passes. Since they were intercepted, we can’t tell whether they were intended to be line-breaking or not simply from the event data. To tackle this, we can transfer the idea of one classic case in probability theory —— survival analysis. In this scenario, we see passing length as the random variable —— the lifetime of a pass, and a ball intercepted as death or failure. Then we can use the observed pass lengths to fit the Weibull Survival Model and calculate the expected lifetime (intended length) for each intercepted pass.
 
 The expected lifetime is calculated by **conditional expectation**, given that a pass has already survived a certain distance.
+
+1. **PDF of Weibull Distribution**:
+```math
+f(t; \lambda, k) = \frac{k}{\lambda} \left( \frac{t}{\lambda} \right)^{k-1} e^{-\left( \frac{t}{\lambda} \right)^k},t>0
+```
+
+2. **Weibull Survival Function**:
+```math
+S(t) = P\{T > t\} = 1 - F(t) = 1 - \int_0^t f(u) \, du = e^{-\left( \frac{t}{\lambda} \right)^k}, \quad t > 0
+```
+
+3. **Conditional Weibull Distribution**:
+```math
+\begin{aligned} f_{T | T > s}(t) = \frac{f_T(t)}{P(T > s)}&= \frac{\frac{k}{\lambda} \left( \frac{t}{\lambda} \right)^{k-1} e^{-\left( \frac{t}{\lambda} \right)^k}}{e^{-\left( \frac{s}{\lambda} \right)^k}}\\&=\frac{k}{\lambda} \left( \frac{t}{\lambda} \right)^{k-1} e^{\left( \frac{s}{\lambda} \right)^k - \left( \frac{t}{\lambda} \right)^k},\quad t>s\end{aligned}
+```
+
+4. **Conditional Expectation**:
 ```math
 \begin{aligned}\mathbb{E}[T \mid T > s]&=\int_{\left( \frac{s}{\lambda} \right)^k}^\infty \lambda z^{\frac{1}{k}} e^{\left( \frac{s}{\lambda} \right)^k} e^{-z} \, dz =\lambda e^{\left( \frac{s}{\lambda} \right)^k} \Gamma\left(1 + \frac{1}{k}, \left( \frac{s}{\lambda} \right)^k \right)\end{aligned}
 ```
