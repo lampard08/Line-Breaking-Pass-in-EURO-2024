@@ -71,8 +71,6 @@ Having all passes labeled with line-breaking or not, we can do data analysis and
 
 Here are two examples of my analytical works. The first graph (created in Tableau, the workbook file can be found in this repository, and team icons can be found in the folder) shows the midfielders' line-breaking pass performance with annotations. The second graph shows Toni Kroos's line-breaking passes delivered to German attacking midfielders.
 
-Detailed analysis can be found in [my article](https://medium.com/@WeiranLin/decoding-line-breaking-passes-in-euro-2024-806d8ac26882).
-
 ![Mid LBP](./Images/Mid-LBP-Annotated-Logo.png)
 
 ![TK LBP](./Images/TK-LBP-Logo.png)
